@@ -1,0 +1,26 @@
+<div class="h-full p-4 flex flex-col gap-15 justify-center">
+  <div>
+    <p class="font-bold underline pb-3">Variables : </p>
+    <p>Value : {{value}}</p>
+    <p>Public Value : {{publicValue}}</p>
+    <p>Value Length: {{value.length}}</p>
+    <p>Value Length: {{value.substring(0,5)}}</p>
+    <p>Scripted Value : {{2 + 2}}</p>
+    <p>Optionnal Value : {{optionalValue || "Inconnue"}}</p>
+  </div>
+  <div>
+    <p class="font-bold underline pb-3">Input / Output : </p>
+    <!--<app-child recievedValue="{{value}}"/>-->
+    <app-child [recievedValue]="optionalREQUIREDValue"/>
+    <app-child recievedValue="{{value}} send to Child" (childClick)="childButtonClicked()"/>
+  </div>
+  <div>
+    <p class="font-bold underline pb-3">Synchronisation : </p>
+    <!--<app-sync [innerValue]="publicValue" (innerValueChange)="publicValue = $event"/>-->
+    <app-sync [(innerValue)]="publicValue"/>
+  </div>
+  <div>
+    <p class="font-bold underline pb-3">Personne : {{person.prenom}} {{person.nom}}</p>
+    <app-edit [(person)]="person"/>
+  </div>
+</div>
