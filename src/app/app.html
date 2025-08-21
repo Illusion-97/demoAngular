@@ -1,5 +1,10 @@
 <div class="select-none h-screen w-screen flex flex-col dark:bg-gray-800 dark:text-white text-2xl">
+  <header class="flex justify-between items-center p-4 bg-gray-200">
+    <a routerLink="/">Home</a>
+    <a routerLink="/data-binding">Data-Binding</a>
+    <a routerLink="/directives">Directives</a>
+  </header>
  <div class="grow w-full min-h-0 shadow-inner overflow-auto">
-    <app-data-binding [optionalREQUIREDValue]="title"/>
+    <router-outlet/>
  </div>
 </div>

@@ -1,7 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {Child} from './child/child';
 import {Sync} from './sync/sync';
 import {Edit} from './edit/edit';
+import {Person, PersonService} from '../../services/person';
 
 @Component({
   selector: 'app-data-binding',
@@ -28,6 +29,8 @@ export class DataBinding {
   @Input()
   optionalREQUIREDValue! : string;
 
+  service = inject(PersonService);
+
   childButtonClicked() {
     alert("Child button clicked")
   }
@@ -41,9 +44,4 @@ export class DataBinding {
   * Afficher dans data-binding.html les informations de la variable person
   * Editer ces informations dans des inputs dans le composant edit
   * */
-}
-
-export interface Person {
-  nom: string;
-  prenom: string;
 }

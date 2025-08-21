@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Person} from '../data-binding';
 import {FormsModule} from '@angular/forms';
+import {Person} from '../../../services/person';
 
 @Component({
   selector: 'app-edit',

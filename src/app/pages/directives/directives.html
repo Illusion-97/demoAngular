@@ -1,0 +1,21 @@
+<div class="h-full w-full flex flex-wrap gap-6 p-10 justify-center items-center">
+  @for (person of service.persons; track $index; let first = $first; let last = $last; let even = $even; let odd = $odd;) {
+    @if (person.nom.trim()) {
+      <div class="p-2 border rounded-2xl shadow"
+           [class.border-red-600]="$first"
+           [class.border-green-600]="$last"
+           [class.bg-slate-300]="$even"
+           [class.bg-slate-100]="$odd"
+      >
+        <p class="text-3xl font-bold underline">Nom : </p>
+        <p [style.color]="'blue'">{{person.nom}}</p>
+        <p class="text-3xl font-bold underline">Prenom : </p>
+        <p>{{person.prenom}}</p>
+      </div>
+    } @else {
+      <p>Personne sans nom</p>
+    }
+  } @empty {
+    <p>Aucun personne</p>
+  }
+</div>
