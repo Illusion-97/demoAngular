@@ -8,5 +8,9 @@ export const routes: Routes = [
   {
     path: 'directives',
     loadComponent: () => import('./pages/directives/directives').then(m => m.Directives)
+  },
+  {
+    path: "editor",
+    loadComponent: () => import('./pages/editor/editor').then(m => m.Editor)
   }
 ];
